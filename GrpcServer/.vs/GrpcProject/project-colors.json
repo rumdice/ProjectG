@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "786a2cfc-2680-45ae-91bf-1e8b4a3a5e33": {
+      "ProjectGuid": "786a2cfc-2680-45ae-91bf-1e8b4a3a5e33",
+      "DisplayName": "GrpcServer",
+      "ColorIndex": 0
+    },
+    "262a11ca-5793-4bd1-a7e4-11bd45e859d4": {
+      "ProjectGuid": "262a11ca-5793-4bd1-a7e4-11bd45e859d4",
+      "DisplayName": "GrpcClient",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
