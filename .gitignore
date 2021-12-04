@@ -33,3 +33,6 @@
 /GrpcServer/.vs
 /GrpcServer/obj
 /GrpcClient/obj
+/GrpcServer/bin
+/Protocol/obj
+/Protocol/bin
