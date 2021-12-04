@@ -55,3 +55,5 @@ C:\GitHub\ProjectG\GrpcServer\obj\Debug\net6.0\GrpcServer.dll
 C:\GitHub\ProjectG\GrpcServer\obj\Debug\net6.0\ref\GrpcServer.dll
 C:\GitHub\ProjectG\GrpcServer\obj\Debug\net6.0\GrpcServer.pdb
 C:\GitHub\ProjectG\GrpcServer\obj\Debug\net6.0\GrpcServer.genruntimeconfig.cache
+C:\GitHub\ProjectG\GrpcServer\bin\Debug\net6.0\Protocol.dll
+C:\GitHub\ProjectG\GrpcServer\bin\Debug\net6.0\Protocol.pdb

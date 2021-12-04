@@ -1,4 +1,5 @@
 using Grpc.Core;
+using GrpcGreeter;
 using GrpcServer;
 
 namespace GrpcServer.Services
