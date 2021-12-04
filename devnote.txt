@@ -1,11 +1,41 @@
 2021.12.3
-
 grpc 기본 프로젝트 생성
 docker 사용
 
 docker 환경을 사용하기 위해선 docker desktop 설치
-
 docker 설치후 wsl 수동설치
 https://docs.microsoft.com/ko-kr/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
-
 Ubuntu로 설치
+
+
+
+2021.12.4
+프로젝트 분리
+- 서버
+- 클라
+- 프로토콜 
+
+README.md 파일 작성 
+- 프로젝트 소개
+
+git branch 정리
+- git flow init
+- master, dev 구조로 변경
+- 주로 dev 에서만 개발 할 듯.
+
+
+
+2021.12.5
+프로젝트에 필요한 요소를 하나 씩 추가 하기
+재밌어 보이는 기능 R&D 하여 적용해보기
+
+launchSettings.Json의 port 정의값(7293)이 적용 안되는 이유?
+
+발견된 현상
+- 빌드 후 bin/Debug(Release)/net.6.0 의 grpceserver.exe 실행시 포트가 5001
+- vs 에디터 상에서 실행시에는 port가 7293
+
+...정확한 원인을 알기 어렵다.
+
+
+

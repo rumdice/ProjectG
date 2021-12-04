@@ -6,9 +6,7 @@ using System;
 
 
 
-//using var channel = GrpcChannel.ForAddress("https://localhost:7293")
-
-using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+using var channel = GrpcChannel.ForAddress("https://localhost:7293");
 var client = new Greeter.GreeterClient(channel);
 var reply = await client.SayHelloAsync(
                   new HelloRequest { Name = "GreeterClient" });
