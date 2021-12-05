@@ -1,6 +1,6 @@
 ﻿using Grpc.Core;
 using Grpc.Net.Client;
-using GrpcGreeter;
+using GrpcProtocol;
 using System;
 
 
