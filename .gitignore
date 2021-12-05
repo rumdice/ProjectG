@@ -36,3 +36,4 @@
 /GrpcServer/bin
 /Protocol/obj
 /Protocol/bin
+/GrpcClient/bin
