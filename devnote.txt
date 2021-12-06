@@ -49,14 +49,19 @@ launchSettings.Json의 port 정의값(7293)이 적용 안되는 이유?
 
 
 2021.12.6
+추가 해볼 것
 
-로깅 시스템 연결 시켜놓기
-nlog를 사용
+1. proto 패킷 좀 더 추가
+- 게임에 쓰일 법한 가상 코드
 
-csv 파서 사용
+2. 로깅 시스템 연결 시켜놓기
+- nlog를 사용
 
-docker 사용 
+3. csv 파서 사용
+
+4. docker 사용 (작업자 pc에 redis, mysql 직접 설치 하지 말자)
 - mysql
 - redis
-이젠 작업자 pc에 이것저것 설치하지 말자!
 
+5. 코드구조 개선
+- 내일?
