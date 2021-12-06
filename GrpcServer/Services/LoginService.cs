@@ -8,6 +8,10 @@ namespace GrpcServer.Services
     public class LoginService : Login.LoginBase
     {
 
+        // 로거 인스턴스 생성
+        // TODO: 전역에서 단 한번만 선언하고 여러곳에서 사용하게끔
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         public override Task<LoginReply> LoginRpc(LoginRequest request, ServerCallContext context)
         {
             // 1.입력받은 인자값 유효성 확인
@@ -39,6 +43,9 @@ namespace GrpcServer.Services
                 {
                     Console.WriteLine("실패");
                     Console.WriteLine(ex.ToString());
+
+                    // error Log
+                    Logger.Error(ex, "Mysql Error!");
                 }
             }
 
@@ -47,19 +54,29 @@ namespace GrpcServer.Services
             // 레디스 셋팅 및 사용 예시 
             var redis = new Redis();
             redis.Init("localhost", 6379);
-            
+
             var uuidKey = Guid.NewGuid().ToString();
             redis.SetString(uuidKey, "100");
-           
+
+            // logging
+            Logger.Debug("Debug log");
+            Logger.Info("Debug log");
+            Logger.Warn("Debug log");
+
+            var logMsg = "aabbcc";
+            Logger.Warn($"Debug log {logMsg}");
+            Logger.Warn("Debug log {0}", logMsg);
+
+
 
 
             // 4.response
             var responseMessage = $"Welcome userid:{request.UserId} username:{request.UserName}";
             return Task.FromResult(new LoginReply
             {
-                ErrorCode = 0, // success 
+                Error = ErrorType.Success,
                 Message = responseMessage
-            });;
+            }); ;
         }
     }
 }

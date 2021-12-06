@@ -57,7 +57,8 @@ launchSettings.Json의 port 정의값(7293)이 적용 안되는 이유?
 2. 로깅 시스템 연결 시켜놓기
 - nlog를 사용
 
-3. csv 파서 사용
+3. csv 파서 사용 준비
+- 
 
 4. docker 사용 (작업자 pc에 redis, mysql 직접 설치 하지 말자)
 - mysql
