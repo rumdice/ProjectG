@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  db:
+    image: mariadb:10.4
+    container_name: docker_mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: pass
+      MYSQL_DATABASE: rumdice-master
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mariadb/conf.d:/etc/mysql/conf.d
+      - ./mariadb/data:/var/lib/mysql
+      - ./mariadb/initdb.d:/docker-entrypoint-initdb.d

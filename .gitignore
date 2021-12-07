@@ -38,3 +38,4 @@
 /Protocol/bin
 /GrpcClient/bin
 /.vs
+/Script/mariadb
