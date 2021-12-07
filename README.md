@@ -16,6 +16,5 @@ Table: 게임 데이터 테이블 폴더 (.csv)
 
 
 
-브랜치
-master : 보관용 master 브랜치 (live)
-dev : 개발 브랜치
+dev: 개발 브랜치
+master: 보관용 브랜치 (live)
