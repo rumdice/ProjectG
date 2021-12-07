@@ -88,6 +88,10 @@ docker 사용 (완료)
 - mysql
 - redis
 
+ProjectG 구성 변경 (완료)
+기본 브랜치 dev로 설정
+readme 파일 내용 추가
+
 코드구조 개선 (진행)
 - 어떤 구조로 개선 할지 설계
 
