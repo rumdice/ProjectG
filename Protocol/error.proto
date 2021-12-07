@@ -1,0 +1,15 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcProtocol";
+
+package protocol;
+
+enum ErrorType {
+	SUCCESS = 0;
+	MYSQL_ERROR = 1;
+	REDIS_ERROR = 2;
+	INVAILD_PARAM = 3;
+	ETC_ERROR = 4;
+}
+
+

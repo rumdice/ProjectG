@@ -1,0 +1,20 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcProtocol";
+
+package protocol;
+import "error.proto";
+
+service Login {
+  rpc LoginRpc (LoginRequest) returns (LoginReply);
+}
+
+message LoginRequest {
+  int32 userId = 1;
+  string userName = 2;
+}
+
+message LoginReply {
+  ErrorType error = 1;
+  string message = 2;
+}

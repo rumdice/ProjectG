@@ -1,0 +1,23 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcProtocol";
+
+package protocol;
+import "error.proto";
+import "entity.proto";
+
+service Item {
+  rpc ItemRpc (ItemUseRequest) returns (ItemUseReply);
+}
+
+message ItemUseRequest {
+  int32 userId = 1;
+  string userName = 2;
+  int32 itemId = 3;
+  int32 itemCount = 4;
+}
+
+message ItemUseReply {
+ ErrorType error = 1;
+ repeated Item remainItems = 2;
+}
