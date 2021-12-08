@@ -39,3 +39,4 @@
 /GrpcClient/bin
 /.vs
 /Script/mariadb
+/Script/docker_projectG/mariadb
