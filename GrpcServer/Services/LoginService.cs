@@ -2,6 +2,7 @@
 using Grpc.Core;
 using GrpcProtocol;
 using GrpcServer.DB;
+using GrpcServer.Util;
 using MySql.Data.MySqlClient;
 using System.Globalization;
 
@@ -9,11 +10,6 @@ namespace GrpcServer.Services
 {
     public class LoginService : Login.LoginBase
     {
-
-        // 로거 인스턴스 생성
-        // TODO: 전역에서 단 한번만 선언하고 여러곳에서 사용하게끔
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
-
         // csv temp class
         public class Item
         {
@@ -56,7 +52,7 @@ namespace GrpcServer.Services
                     Console.WriteLine(ex.ToString());
 
                     // error Log
-                    Logger.Error(ex, "Mysql Error!");
+                    nLogger.Logger.Error(ex, "Mysql Error!");
                 }
             }
 
@@ -71,13 +67,13 @@ namespace GrpcServer.Services
 
 
             // 4. logging
-            Logger.Debug("Debug log");
-            Logger.Info("Debug log");
-            Logger.Warn("Debug log");
+            nLogger.Logger.Debug("Debug log");
+            nLogger.Logger.Info("Debug log");
+            nLogger.Logger.Warn("Debug log");
 
             var logMsg = "aabbcc";
-            Logger.Warn($"Debug log {logMsg}");
-            Logger.Warn("Debug log {0}", logMsg);
+            nLogger.Logger.Warn($"Debug log {logMsg}");
+            nLogger.Logger.Warn("Debug log {0}", logMsg);
 
 
             // 5.csv 
@@ -97,7 +93,7 @@ namespace GrpcServer.Services
             {
                 Error = ErrorType.Success,
                 Message = responseMessage
-            }); ;
+            });
         }
     }
 }
