@@ -4,19 +4,20 @@ namespace GrpcServer.DB
 {
     public class Redis
     {
-        private ConnectionMultiplexer redisConnection;
-        private IDatabase db;
+        private static ConnectionMultiplexer redisConnection;
+        private static IDatabase redis;
 
         public Redis() { }
 
-        public bool Init(string host, int port)
+
+        public static bool Init(string host, int port)
         {
             try
             {
-                this.redisConnection = ConnectionMultiplexer.Connect(host + ":" + port);
+                redisConnection = ConnectionMultiplexer.Connect(host + ":" + port);
                 if (redisConnection.IsConnected)
                 {
-                    this.db = redisConnection.GetDatabase();
+                    redis = redisConnection.GetDatabase();
                     return true;
                 }
                 return false;
@@ -25,17 +26,17 @@ namespace GrpcServer.DB
             {
                 // TODO: 에러 메시지 처리 방안 마련
                 return false;
-            }            
+            }
         }
 
-        public string GetString(string key)
+        public static string GetString(string key)
         {
-            return this.db.StringGet(key);
+            return redis.StringGet(key);
         }
 
-        public bool SetString(string key, string val)
+        public static bool SetString(string key, string val)
         {
-            return this.db.StringSet(key, val);
+            return redis.StringSet(key, val);
         }
     }
 }

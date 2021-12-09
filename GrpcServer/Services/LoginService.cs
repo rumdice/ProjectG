@@ -59,12 +59,9 @@ namespace GrpcServer.Services
             // 3-1. redis
             // TODO: 서버 초기 실행시 Init 하는 것으로 이동
             // 레디스 셋팅 및 사용 예시 
-            var redis = new Redis();
-            redis.Init("localhost", 6379);
-
             var uuidKey = Guid.NewGuid().ToString();
-            redis.SetString(uuidKey, "100");
-
+            Redis.SetString(uuidKey, "10000");
+            
 
             // 4. logging
             nLogger.Logger.Debug("Debug log");
