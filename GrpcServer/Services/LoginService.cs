@@ -20,33 +20,7 @@ namespace GrpcServer.Services
             // 3.db process
             // mysql 예시 사용 
             // TODO: 클래스 화 시키기
-            using (MySqlConnection connection = new MySqlConnection("Server=localhost;Port=3306;Database=coding32;Uid=root;Pwd=1111"))
-            {
-                string insertQuery = "INSERT INTO Co32table(idx,header,body) VALUES(3,'header1','body2')";
-                try
-                {
-                    connection.Open();
-                    MySqlCommand command = new MySqlCommand(insertQuery, connection);
-
-                    if (command.ExecuteNonQuery() == 1)
-                    {
-                        Console.WriteLine("인서트 성공");
-                    }
-                    else
-                    {
-                        Console.WriteLine("인서트 실패");
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("실패");
-                    Console.WriteLine(ex.ToString());
-
-                    // error Log
-                    NLogger.Logger.Error(ex, "Mysql Error!");
-                }
-            }
+            
 
             // 3-1. redis
             // TODO: 서버 초기 실행시 Init 하는 것으로 이동
