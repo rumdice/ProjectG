@@ -1,29 +1,21 @@
-﻿using CsvHelper;
-using Grpc.Core;
+﻿using Grpc.Core;
 using GrpcProtocol;
 using GrpcServer.DB;
 using GrpcServer.Util;
 using MySql.Data.MySqlClient;
-using System.Globalization;
 
 namespace GrpcServer.Services
 {
     public class LoginService : Login.LoginBase
     {
-        // csv temp class
-        public class Item
-        {
-            public int Id { get; set; }
-            public string? Name { get; set; }
-            public int Type { get; set; }
-            public int Count { get; set; }
-        }
-
         public override Task<LoginReply> LoginRpc(LoginRequest request, ServerCallContext context)
         {
             // 1.입력받은 인자값 유효성 확인
 
             // 2.서버 로직
+            // 로직 안에서 db 처리가 필요
+            // 로직 안에서 db 처리가 필요
+            // 로직 안에서 필요시 에러 로깅
 
             // 3.db process
             // mysql 예시 사용 
@@ -52,7 +44,7 @@ namespace GrpcServer.Services
                     Console.WriteLine(ex.ToString());
 
                     // error Log
-                    nLogger.Logger.Error(ex, "Mysql Error!");
+                    NLogger.Logger.Error(ex, "Mysql Error!");
                 }
             }
 
@@ -63,28 +55,17 @@ namespace GrpcServer.Services
             Redis.SetString(uuidKey, "10000");
             
 
-            // 4. logging
-            nLogger.Logger.Debug("Debug log");
-            nLogger.Logger.Info("Debug log");
-            nLogger.Logger.Warn("Debug log");
+            // logging
+            NLogger.Logger.Debug("Debug log");
+            NLogger.Logger.Info("Debug log");
+            NLogger.Logger.Warn("Debug log");
 
             var logMsg = "aabbcc";
-            nLogger.Logger.Warn($"Debug log {logMsg}");
-            nLogger.Logger.Warn("Debug log {0}", logMsg);
+            NLogger.Logger.Warn($"Debug log {logMsg}");
+            NLogger.Logger.Warn("Debug log {0}", logMsg);
 
 
-            // 5.csv 
-            // TODO: 임시 테이블 구조를 객체 형태로 파싱
-            // 쿼리 수준으로 사용하기 좋은 클래스 제공 필요
-            var tablePath = "../Table/test.csv";
-            using (var reader = new StreamReader(tablePath))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                var records = csv.GetRecords<Item>();
-            }
-
-
-            // 6.response
+            // response
             var responseMessage = $"Welcome userid:{request.UserId} username:{request.UserName}";
             return Task.FromResult(new LoginReply
             {

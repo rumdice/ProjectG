@@ -17,7 +17,7 @@ namespace GrpcServer.Util
     // TODO: 
     // 제네릭
     // thread safe lazy 초기화
-    public class nLogger
+    public class NLogger
     {
         public static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         //public NLog.Logger Instance() { return Logger; } 

@@ -6,6 +6,7 @@ package protocol;
 import "error.proto";
 import "entity.proto";
 
+
 service Item {
   rpc ItemRpc (ItemUseRequest) returns (ItemUseReply);
 }
@@ -18,6 +19,6 @@ message ItemUseRequest {
 }
 
 message ItemUseReply {
- ErrorType error = 1;
- repeated Item remainItems = 2;
+  ErrorType error = 1;
+  repeated ItemEntity remainItems = 2;
 }

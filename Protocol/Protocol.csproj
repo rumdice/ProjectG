@@ -10,6 +10,7 @@
     <None Remove="entity.proto" />
     <None Remove="error.proto" />
     <None Remove="greet.proto" />
+    <None Remove="item.proto" />
     <None Remove="login.proto" />
   </ItemGroup>
 
@@ -27,6 +28,7 @@
     <Protobuf Include="greet.proto">
       <GrpcServices>Both</GrpcServices>
     </Protobuf>
+    <Protobuf Include="item.proto" />
     <Protobuf Include="login.proto" />
   </ItemGroup>
 

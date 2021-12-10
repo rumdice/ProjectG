@@ -7,8 +7,7 @@ package protocol;
 // 오브젝트 타입을 모아둠
 // TODO: 소비성 아이템인지 뭐 특수 아이템이지에 따라 패킷구조가 다양하게
 // 하지만 최대한 간결한 구조를 생각해보기
-
-message Item {
-  int32 itemId = 1;
-  string itemName = 2;
+message ItemEntity {
+	int64 itemId = 1;
+	int32 count = 2;
 }
