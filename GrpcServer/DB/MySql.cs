@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using GrpcServer.Common;
+using MySql.Data.MySqlClient;
 
 namespace GrpcServer.DB
 {
@@ -6,7 +7,7 @@ namespace GrpcServer.DB
     {
         public MySql() { }
 
-        public bool Init()
+        public static bool Init()
         {
             // TODO: DB 연결만 시켜놓고 쿼리를 수행하는것은 로직부분으로 이동
             using (MySqlConnection connection = new MySqlConnection("Server=localhost;Port=3306;Database=coding32;Uid=root;Pwd=1111"))
@@ -33,7 +34,7 @@ namespace GrpcServer.DB
                     Console.WriteLine(ex.ToString());
 
                     // error Log
-                    Util.NLogger.Logger.Error(ex, "Mysql Error!");
+                    NLogger.Log.Error(ex, "Mysql Error!");
                     return false;
                 }
             }

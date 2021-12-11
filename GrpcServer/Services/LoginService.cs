@@ -1,8 +1,6 @@
 ﻿using Grpc.Core;
 using GrpcProtocol;
 using GrpcServer.DB;
-using GrpcServer.Util;
-using MySql.Data.MySqlClient;
 
 namespace GrpcServer.Services
 {
@@ -29,14 +27,14 @@ namespace GrpcServer.Services
             Redis.SetString(uuidKey, "10000");
             
 
-            // logging
-            NLogger.Logger.Debug("Debug log");
-            NLogger.Logger.Info("Debug log");
-            NLogger.Logger.Warn("Debug log");
+            //// logging
+            //NLogger.Log.Debug("Debug log");
+            //NLogger.Log.Info("Debug log");
+            //NLogger.Log.Warn("Debug log");
 
-            var logMsg = "aabbcc";
-            NLogger.Logger.Warn($"Debug log {logMsg}");
-            NLogger.Logger.Warn("Debug log {0}", logMsg);
+            //var logMsg = "aabbcc";
+            //NLogger.Log.Warn($"Debug log {logMsg}");
+            //NLogger.Log.Warn("Debug log {0}", logMsg);
 
 
             // response
