@@ -1,5 +1,4 @@
 using GrpcServer.Common;
-using GrpcServer.DB;
 using GrpcServer.Services;
 using GrpcServer.Tables;
 
@@ -20,14 +19,21 @@ namespace GrpcServer
 
             // Configure the HTTP request pipeline.
 
-            // Init (mysql, redis, config table...)
-            // TODO: 
-            Redis.Init("127.0.0.1", 6379);
+            // TODO: 서버 시작전 초기 셋팅 
+            // Db, Config, Table, ETC...
+
+            var Redis = new GrpcServer.DB.Redis();
+            Redis.Connect();
+
+            var Mysql = new GrpcServer.DB.MySql();
+            Mysql.Connect();
+
             TablePaser.Load();
             
             app.MapGrpcService<GreeterService>();
             app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 
+            // 서버 시작
             app.Run();
         }
     }

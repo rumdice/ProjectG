@@ -6,15 +6,22 @@ namespace GrpcServer.DB
     {
         private static ConnectionMultiplexer redisConnection;
         private static IDatabase redis;
+        private string host;
+        private int port;
+        private int db;
 
-        public Redis() { }
+        public Redis() 
+        {
+            this.host = "localhost";
+            this.port = 16379;
+        }
 
 
-        public static bool Init(string host, int port)
+        public bool Connect()
         {
             try
             {
-                redisConnection = ConnectionMultiplexer.Connect(host + ":" + port);
+                redisConnection = ConnectionMultiplexer.Connect(this.host + ":" + this.port);
                 if (redisConnection.IsConnected)
                 {
                     redis = redisConnection.GetDatabase();
@@ -25,6 +32,7 @@ namespace GrpcServer.DB
             catch (Exception e)
             {
                 // TODO: 에러 메시지 처리 방안 마련
+                Console.WriteLine(e.Message);
                 return false;
             }
         }
