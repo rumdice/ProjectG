@@ -1,0 +1,12 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcProtocol";
+
+package protocol;
+import "error.proto";
+import "entity.proto";
+
+
+service Test {
+  
+}

@@ -5,7 +5,7 @@ namespace GrpcServer.Services
 {
     public class ItemService : Item.ItemBase
     {
-        public override Task<ItemUseReply> ItemRpc(ItemUseRequest request, ServerCallContext context)
+        public override Task<ItemUseReply> ItemUseRpc(ItemUseRequest request, ServerCallContext context)
         {
             // check request
 

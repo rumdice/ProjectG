@@ -30,8 +30,10 @@ namespace GrpcServer
 
             TablePaser.Load();
             
-            app.MapGrpcService<GreeterService>();
-            app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
+            app.MapGrpcService<LoginService>();
+            app.MapGrpcService<ItemService>();
+
+            app.MapGet("/", () => "Server Start...");
 
             // 서버 시작
             app.Run();

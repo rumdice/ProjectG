@@ -8,7 +8,7 @@ import "entity.proto";
 
 
 service Item {
-  rpc ItemRpc (ItemUseRequest) returns (ItemUseReply);
+  rpc ItemUseRpc (ItemUseRequest) returns (ItemUseReply);
 }
 
 message ItemUseRequest {

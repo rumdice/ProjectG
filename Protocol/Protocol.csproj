@@ -9,9 +9,9 @@
   <ItemGroup>
     <None Remove="entity.proto" />
     <None Remove="error.proto" />
-    <None Remove="greet.proto" />
     <None Remove="item.proto" />
     <None Remove="login.proto" />
+    <None Remove="test.proto" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,11 +25,9 @@
   <ItemGroup>
     <Protobuf Include="entity.proto" />
     <Protobuf Include="error.proto" />
-    <Protobuf Include="greet.proto">
-      <GrpcServices>Both</GrpcServices>
-    </Protobuf>
     <Protobuf Include="item.proto" />
     <Protobuf Include="login.proto" />
+    <Protobuf Include="test.proto" />
   </ItemGroup>
 
 </Project>
