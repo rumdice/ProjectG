@@ -22,6 +22,7 @@ namespace GrpcServer
             // TODO: 서버 시작전 초기 셋팅 
             // Db, Config, Table, ETC...
 
+           
             var Redis = new GrpcServer.DB.Redis();
             Redis.Connect();
 

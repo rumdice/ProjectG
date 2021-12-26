@@ -1,6 +1,9 @@
-﻿namespace GrpcServer.Common
+﻿
+
+namespace GrpcServer.Common
 {
-    public class Util
+    public static class Util
     {
+        
     }
 }
