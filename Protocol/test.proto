@@ -8,5 +8,24 @@ import "entity.proto";
 
 
 service Test {
-  
+	// 단항
+	rpc UnaryCall (TestRequest) returns (TestResponse);
+
+	// 서버 스트리밍
+	rpc StreamingFromServer (TestRequest) returns (stream TestResponse);
+
+	// 클라 스트리밍
+	rpc StreamingFromClient (stream TestRequest) returns (TestResponse);
+
+	// 양방향 스트리밍
+	rpc StreamingBothWay (stream TestRequest) returns (stream TestResponse);
+}
+
+message TestRequest {
+  int32 userId = 1;
+}
+
+message TestResponse {
+  ErrorType error = 1;
+  string message = 2;
 }

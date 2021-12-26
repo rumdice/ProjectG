@@ -28,10 +28,12 @@ namespace GrpcServer
             var Mysql = new GrpcServer.DB.MySql();
             Mysql.Connect();
 
-            TablePaser.Load();
+            // TablePaser.Load();
             
             app.MapGrpcService<LoginService>();
             app.MapGrpcService<ItemService>();
+            app.MapGrpcService<TestService>();
+
 
             app.MapGet("/", () => "Server Start...");
 
