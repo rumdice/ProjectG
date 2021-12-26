@@ -187,3 +187,7 @@ GRPC 연결형 서비스 설계
 - 코드 정리
 - 테이블 파일 읽기 및 linq
 - 구조 개선
+
+GRpc Doc
+https://docs.microsoft.com/ko-kr/aspnet/core/grpc/services?view=aspnetcore-6.0
+https://docs.microsoft.com/ko-kr/aspnet/core/grpc/client?view=aspnetcore-6.0
