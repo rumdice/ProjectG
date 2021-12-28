@@ -191,3 +191,25 @@ GRPC 연결형 서비스 설계
 GRpc Doc
 https://docs.microsoft.com/ko-kr/aspnet/core/grpc/services?view=aspnetcore-6.0
 https://docs.microsoft.com/ko-kr/aspnet/core/grpc/client?view=aspnetcore-6.0
+
+
+2021.12.28
+오늘 할 것?
+
+1.구조 개선
+- 가상의 게임 로직을 처리하는 부분 구성.
+- 더 나은 설계가 있는지 생각해보기.
+
+2.코드 정리
+- 사용안하거나 중복되는 코드 정리.
+
+3.기능 클래스 추가 및 개선
+- 테이블 읽기
+- Mysql
+- Redis
+
+4.차후에 해볼 것?
+- 더미 클라이언트
+- 실제로 서버 머신(리눅스)에 어떻게 빌드 배포 할 것인지?
+
+으어....
